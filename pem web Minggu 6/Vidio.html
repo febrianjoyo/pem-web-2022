@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vdio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="not-main">Home</a>
+        <a href="contact.html" class="not-main">Contact</a>
+        <a href="about.html" class="main">Vidio</a>
+		<a href="./kursrp.xlsx "class="not-main">Download CV</a>
+		<a href="./News.html "class="not-main">News</a>
+    </nav>
+
+    <hr />
+
+    <article>
+		<h2> Belajar Multimedia HTML</h2>
+		<button id="check">check duration</button>
+		<p id="duration"></p>
+		 
+    
+        <p>
+            <video controls width="500" height="300" id="myVideo">
+			<source src="Brian.mp4"type="video/mp4"/>
+			</video>
+        </p>
+    </article>
+
+    <!--hr untuk garis bawah-->
+    <hr>
+    <footer>
+        <p>Copyright &copy; 2022 Jamet</p>
+    </footer>
+	<script>
+	const vid = document.querySelector("#myVideo");
+      const check = document.querySelector("#check");
+
+      check.addEventListener("click", () => {
+        const text = document.querySelector("#duration");
+        const minute = parseInt(vid.duration / 60, 10);
+        const seconds = Math.floor(vid.duration % 60);
+        text.innerHTML = minute + " menit " + seconds + " detik";
+      });
+	</script>
+</body>
+
+</html>
